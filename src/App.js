@@ -38,10 +38,13 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/searchVideo">Video Search</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/library">Video Library</Link>
+            </li>
+            <li>
+              <Link to="/customers">Customers</Link>
             </li>
           </ul>
         </nav>
@@ -49,11 +52,14 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/searchVideo">
+            <SearchVideo />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/library">
+            <Library />
+          </Route>
+          <Route path="/customers">
+            <Customers />
           </Route>
           <Route path="/">
             <Home />
@@ -68,10 +74,14 @@ function Home() {
   return <h2>Home</h2>;
 }
 
-function About() {
-  return <h2>About</h2>;
+function SearchVideo() {
+  return <h2>Search Video</h2>;
 }
 
-function Users() {
-  return <h2>Users</h2>;
+function Library() {
+  return <h2>Library</h2>;
+}
+
+function Customers() {
+  return <h2>Customers</h2>;
 }
