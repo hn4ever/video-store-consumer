@@ -14,13 +14,23 @@ import Customers from './components/Customers';
 const App = () => {
 
 const CUSTOMERS_URL = 'http://localhost:3000/customers';
+const VIDEOS_URL = 'http://localhost:3000/videos';
+
 
 const [customersList, setCustomersList] = useState([])
 const [selectedCustomer, setSelectedCustomer] = useState(null)
+
+const [videosList, setVideosList] = useState([])
+const [selectedVideo, setSelectedVideo] = useState(null)
+
 const [errorMessage, setErrorMessage] = useState(null);
 
 const onSelectCustomerCallback = (customer) => {
   setSelectedCustomer(customer)
+}
+
+const onSelectVideoCallback = (video) => {
+  setSelectedVideo(video)
 }
 
 useEffect(() => {
@@ -34,6 +44,16 @@ useEffect(() => {
     });
 }, []);
 
+useEffect(() => {
+  axios.get(VIDEOS_URL)
+    .then((response) => {
+      console.log(response.data)
+      setCustomersList(response.data);
+    })
+    .catch((error) => {
+      setErrorMessage(error.message);
+    });
+}, []);
 
 
 
@@ -60,7 +80,7 @@ useEffect(() => {
             <SearchVideo />
           </Route>
           <Route path="/library">
-            <Library />
+            <Library videosList = {videosList} onSelectVideoCallback ={onSelectVideoCallback}/>
           </Route>
           <Route path="/customers">
             <Customers customersList={customersList} onSelectCustomerCallback ={onSelectCustomerCallback} />
