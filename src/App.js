@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,12 +27,12 @@ const [selectedVideo, setSelectedVideo] = useState(null)
 
 const [errorMessage, setErrorMessage] = useState(null);
 
-const onSelectCustomerCallback = (customer) => {
-  setSelectedCustomer(customer)
+const onSelectCustomerCallback = (customerId) => {
+  setSelectedCustomer(customersList.find((customer)=> customer.id == customerId))
 }
 
-const onSelectVideoCallback = (video) => {
-  setSelectedVideo(video)
+const onSelectVideoCallback = (videoId) => {
+  setSelectedVideo(videosList.find((video)=> video.id == videoId))
 }
 
 useEffect(() => {
@@ -55,7 +56,6 @@ useEffect(() => {
     });
 }, []);
 
-
 // Video checkout function here 
 
   return (
@@ -70,6 +70,11 @@ useEffect(() => {
           </ul>
         </nav>
         <h1> Videos Shop! </h1>
+        <div>
+          Selected Movie {selectedVideo? selectedVideo.title : ''}
+          Selected Customer {selectedCustomer? selectedCustomer.name : ''}
+
+        </div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
