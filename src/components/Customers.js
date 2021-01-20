@@ -5,7 +5,6 @@ import Customer from './Customer';
 
 
 const Customers = (props) => {
-    console.log(props.customersList)
     const customersResponseData = props.customersList.map((customer) => {
         return ( < Customer
             key = {customer.id}

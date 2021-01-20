@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 
 import Customers from './components/Customers';
+import Library from  './components/Library';
 
 const App = () => {
 
@@ -71,7 +72,7 @@ useEffect(() => {
           <li> <Link to="/customers">Customers </Link> </li>
           </ul>
         </nav>
-        <h1> Cool Videos Store! </h1>
+        <h1> Videos Shop! </h1>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -102,7 +103,7 @@ function SearchVideo() {
   return <h2>Search Video</h2>;
 }
 
-function Library() {
+function LibraryList() {
   return <h2>Library</h2>;
 }
 
