@@ -93,7 +93,7 @@ useEffect(() => {
 }
 
 function Home() {
-  return <h2>Videos</h2>;
+  return <h2>Home</h2>;
 }
 
 function SearchVideo() {
