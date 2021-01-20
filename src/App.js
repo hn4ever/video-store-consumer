@@ -56,9 +56,6 @@ useEffect(() => {
 }, []);
 
 
-
-// Select Movie function here 
-
 // Video checkout function here 
 
   return (
