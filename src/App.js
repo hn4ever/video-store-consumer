@@ -1,25 +1,3 @@
-// import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <h1 className="App-title">Welcome to React</h1>
-//         </header>
-//         <p className="App-intro">
-//           To get started, edit <code>src/App.js</code> and save to reload.
-//         </p>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
 import React, { useState, useEffect } from 'react';
 
 import {
@@ -29,12 +7,21 @@ import {
   Link
 } from 'react-router-dom';
 
-import Customer from './components/Board';
+import Customers from './Customers';
 
+const App = () => {
 
-export default function App() {
+const [selectedCustomer, setSelectedCustomer] = useState({id: ""})
+
+const selectCustomer = (customer) => {
+  setSelectedCustomer(customer)
+}
+
+// Select Movie function here 
+
+// Video checkout function here 
+
   return (
-
     <Router>
       <div>
         <nav>
@@ -49,8 +36,7 @@ export default function App() {
               <Link to="/library">Video Library</Link>
             </li>
             <li>
-              <Link to="/customers">Customers</Link>
-              < Customer url = 'http://localhost:3000/' />
+              <Link to="/customerslist">Customers</Link>
             </li>
           </ul>
         </nav>
@@ -66,8 +52,8 @@ export default function App() {
           <Route path="/library">
             <Library />
           </Route>
-          <Route path="/customers">
-            <Customers />
+          <Route path="/customerslist">
+            <Customers url = 'http://localhost:3000/' onSelectCustomerCallback={selectCustomer} />
           </Route>
           <Route path="/">
             <Home />
@@ -91,6 +77,8 @@ function Library() {
   return <h2>Library</h2>;
 }
 
-function Customers() {
+function CustomersList() {
   return <h2>Customers</h2>;
 }
+
+export default App; 
