@@ -36,7 +36,6 @@ const onSelectVideoCallback = (video) => {
 useEffect(() => {
   axios.get(CUSTOMERS_URL)
     .then((response) => {
-      console.log(response.data)
       setCustomersList(response.data);
     })
     .catch((error) => {
@@ -48,7 +47,7 @@ useEffect(() => {
   axios.get(VIDEOS_URL)
     .then((response) => {
       console.log(response.data)
-      setCustomersList(response.data);
+      setVideosList(response.data);
     })
     .catch((error) => {
       setErrorMessage(error.message);
@@ -67,8 +66,8 @@ useEffect(() => {
         <nav>
           <ul>
           <li> <Link to="/">Home</Link> </li> 
-          <li> <Link to="/searchVideo">Video Search </Link> </li>
-          <li> <Link to="/library">Video Library </Link> </li>
+          <li> <Link to="/searchVideo">Search </Link> </li>
+          <li> <Link to="/library">Library </Link> </li>
           <li> <Link to="/customers">Customers </Link> </li>
           </ul>
         </nav>
