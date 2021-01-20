@@ -20,7 +20,8 @@
 
 // export default App;
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,8 +29,12 @@ import {
   Link
 } from 'react-router-dom';
 
+import Customer from './components/Board';
+
+
 export default function App() {
   return (
+
     <Router>
       <div>
         <nav>
@@ -45,10 +50,13 @@ export default function App() {
             </li>
             <li>
               <Link to="/customers">Customers</Link>
+              < Customer url = 'http://localhost:3000/' />
             </li>
           </ul>
         </nav>
-
+        <h1>
+          Cool Videos!
+        </h1>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -67,11 +75,12 @@ export default function App() {
         </Switch>
       </div>
     </Router>
+
   );
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2>Videos</h2>;
 }
 
 function SearchVideo() {
