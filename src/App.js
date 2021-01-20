@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 
 import {
   BrowserRouter as Router,
@@ -7,15 +9,34 @@ import {
   Link
 } from 'react-router-dom';
 
-import Customers from './Customers';
+import Customers from './components/Customers';
 
 const App = () => {
 
-const [selectedCustomer, setSelectedCustomer] = useState({id: ''})
+const CUSTOMERS_URL = 'http://localhost:3000/customers';
 
-const selectCustomer = (customer) => {
+const [customersList, setCustomersList] = useState([])
+const [selectedCustomer, setSelectedCustomer] = useState(null)
+const [errorMessage, setErrorMessage] = useState(null);
+
+const onSelectCustomerCallback = (customer) => {
   setSelectedCustomer(customer)
 }
+
+
+useEffect(() => {
+  axios.get(CUSTOMERS_URL)
+    .then((response) => {
+      console.log(response.data)
+      setCustomersList(response.data);
+    })
+    .catch((error) => {
+      setErrorMessage(error.message);
+    });
+}, []);
+
+
+
 
 // Select Movie function here 
 
@@ -26,23 +47,13 @@ const selectCustomer = (customer) => {
       <div>
         <nav>
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/searchVideo">Video Search</Link>
-            </li>
-            <li>
-              <Link to="/library">Video Library</Link>
-            </li>
-            <li>
-              <Link to="/customerslist">Customers</Link>
-            </li>
+          <li> <Link to="/">Home</Link> </li> 
+          <li> <Link to="/searchVideo">Video Search </Link> </li>
+          <li> <Link to="/library">Video Library </Link> </li>
+          <li> <Link to="/customers">Customers </Link> </li>
           </ul>
         </nav>
-        <h1>
-          Cool Videos!
-        </h1>
+        <h1> Cool Videos Store! </h1>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -52,8 +63,8 @@ const selectCustomer = (customer) => {
           <Route path="/library">
             <Library />
           </Route>
-          <Route path="/customerslist">
-            <Customers url = 'http://localhost:3000/' onSelectCustomerCallback={selectCustomer} />
+          <Route path="/customers">
+            <Customers customersList={customersList} onSelectCustomerCallback ={onSelectCustomerCallback} />
           </Route>
           <Route path="/">
             <Home />
@@ -77,7 +88,7 @@ function Library() {
   return <h2>Library</h2>;
 }
 
-function CustomersList() {
+function Customers() {
   return <h2>Customers</h2>;
 }
 
