@@ -23,7 +23,6 @@ const onSelectCustomerCallback = (customer) => {
   setSelectedCustomer(customer)
 }
 
-
 useEffect(() => {
   axios.get(CUSTOMERS_URL)
     .then((response) => {
@@ -88,7 +87,7 @@ function Library() {
   return <h2>Library</h2>;
 }
 
-function Customers() {
+function CustomersList() {
   return <h2>Customers</h2>;
 }
 
