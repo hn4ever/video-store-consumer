@@ -10,23 +10,33 @@ import {
 } from 'react-router-dom';
 
 import Customers from './components/Customers';
+import Library from  './components/Library';
 
 const App = () => {
 
 const CUSTOMERS_URL = 'http://localhost:3000/customers';
+const VIDEOS_URL = 'http://localhost:3000/videos';
+
 
 const [customersList, setCustomersList] = useState([])
 const [selectedCustomer, setSelectedCustomer] = useState(null)
+
+const [videosList, setVideosList] = useState([])
+const [selectedVideo, setSelectedVideo] = useState(null)
+
 const [errorMessage, setErrorMessage] = useState(null);
 
 const onSelectCustomerCallback = (customer) => {
   setSelectedCustomer(customer)
 }
 
+const onSelectVideoCallback = (video) => {
+  setSelectedVideo(video)
+}
+
 useEffect(() => {
   axios.get(CUSTOMERS_URL)
     .then((response) => {
-      console.log(response.data)
       setCustomersList(response.data);
     })
     .catch((error) => {
@@ -34,6 +44,16 @@ useEffect(() => {
     });
 }, []);
 
+useEffect(() => {
+  axios.get(VIDEOS_URL)
+    .then((response) => {
+      console.log(response.data)
+      setVideosList(response.data);
+    })
+    .catch((error) => {
+      setErrorMessage(error.message);
+    });
+}, []);
 
 
 
@@ -47,12 +67,12 @@ useEffect(() => {
         <nav>
           <ul>
           <li> <Link to="/">Home</Link> </li> 
-          <li> <Link to="/searchVideo">Video Search </Link> </li>
-          <li> <Link to="/library">Video Library </Link> </li>
+          <li> <Link to="/searchVideo">Search </Link> </li>
+          <li> <Link to="/library">Library </Link> </li>
           <li> <Link to="/customers">Customers </Link> </li>
           </ul>
         </nav>
-        <h1> Cool Videos Store! </h1>
+        <h1> Videos Shop! </h1>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -60,7 +80,7 @@ useEffect(() => {
             <SearchVideo />
           </Route>
           <Route path="/library">
-            <Library />
+            <Library videosList = {videosList} onSelectVideoCallback ={onSelectVideoCallback}/>
           </Route>
           <Route path="/customers">
             <Customers customersList={customersList} onSelectCustomerCallback ={onSelectCustomerCallback} />
@@ -83,7 +103,7 @@ function SearchVideo() {
   return <h2>Search Video</h2>;
 }
 
-function Library() {
+function LibraryList() {
   return <h2>Library</h2>;
 }
 
