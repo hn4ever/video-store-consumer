@@ -34,6 +34,12 @@ const Customers = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [customersList]);
 
+    return (
+        <div className = 'customers'>
+            <h1 className = 'customer-header'>All Customers</h1>
+            {customersList}
+        </div>
+    )
 }
 
 // Proptypes here 

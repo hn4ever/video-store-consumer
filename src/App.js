@@ -11,7 +11,7 @@ import Customers from './Customers';
 
 const App = () => {
 
-const [selectedCustomer, setSelectedCustomer] = useState({id: ""})
+const [selectedCustomer, setSelectedCustomer] = useState({id: ''})
 
 const selectCustomer = (customer) => {
   setSelectedCustomer(customer)
