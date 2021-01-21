@@ -79,9 +79,9 @@ const onCheckout = () => {
         </nav>
         <h1> Videos Shop! </h1>
         <div>
-          Selected Movie {selectedVideo? selectedVideo.title : ''}
+          Selected Movie: {selectedVideo? selectedVideo.title : 'nothing selected'}
           <br/>
-          Selected Customer {selectedCustomer? selectedCustomer.name : ''}
+          Selected Customer: {selectedCustomer? selectedCustomer.name : 'nothing selected'}
           <br/>
           <button onClick={onCheckout}> Checkout </button>
         </div>
