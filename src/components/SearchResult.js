@@ -10,8 +10,10 @@ const SearchResult = (props) => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const onSelectAdd = (event) => {
+    event.preventDefault();
       const newVideoData = {...props}
-
+      console.log(newVideoData.inventory)
+      
       axios.post(ADD_VIDEO_URL, newVideoData)
         .then((response) => { 
           console.log(response.data)

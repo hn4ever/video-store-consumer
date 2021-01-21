@@ -9,13 +9,13 @@ const Video = (props) => {
 
     return (
         <div className = "video">
-        <h2>Details for {props.title}</h2>
-        <ul>
-            <p>Overview: {props.overview}</p>
-            <p>Release Date: {props.release_date}</p>
-            <p>Image: {props.image_url}</p>
-        </ul>
-        <button onClick={onSelect}> Select </button>
+            <h2>Details for {props.title}</h2>
+            <ul>
+                <p>Overview: {props.overview}</p>
+                <p>Release Date: {props.release_date}</p>
+                <img src={props.image_url} alt='video cover'/>
+            </ul>
+            <button onClick={onSelect}> Select </button>
         </div>
     )
 }
