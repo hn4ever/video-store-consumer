@@ -52,7 +52,7 @@ const Search = () => {
       <h1 className="body-header">Search</h1>
       <form onSubmit={onSubmitForm}>
         <input onChange={onInputChange} value={searchTerm}/>
-        <input className="search-button" type="submit" value="Submit"/>
+        <input className="search" type="submit" value="Submit"/>
       </form>
       <section> {searchComponents} </section>
     </div>
