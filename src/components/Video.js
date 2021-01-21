@@ -1,4 +1,5 @@
 import React from 'react';
+import './Video.css'
 
 
 const Video = (props) => {
@@ -9,11 +10,11 @@ const Video = (props) => {
 
     return (
         <div className = "video">
-            <h2>Details for {props.title}</h2>
+            <h2>{props.title}</h2>
             <ul>
-                <p>Overview: {props.overview}</p>
+                <img className = 'image'src={props.image_url} alt='video cover'/>
+                <p className= 'overview'>Overview: {props.overview}</p>
                 <p>Release Date: {props.release_date}</p>
-                <img src={props.image_url} alt='video cover'/>
             </ul>
             <button onClick={onSelect}> Select </button>
         </div>

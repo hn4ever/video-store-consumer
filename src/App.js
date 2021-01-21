@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-
+import './App.css';
 
 import {
   BrowserRouter as Router,
@@ -68,17 +67,17 @@ const onCheckout = () => {
 
   return (
     <Router>
-      <div>
-        <nav>
+      <div className = 'App-main-div'>
+        <nav className= 'navbar'>
           <ul>
-          <li> <Link to="/">Home</Link> </li> 
-          <li> <Link to="/search">Search </Link> </li>
-          <li> <Link to="/library">Library </Link> </li>
-          <li> <Link to="/customers">Customers </Link> </li>
+          <li className= 'nav-link-list'> <Link to="/">Home</Link> </li> 
+          <li className= 'nav-link-list'> <Link to="/search">Search </Link> </li>
+          <li className= 'nav-link-list'> <Link to="/library">Library </Link> </li>
+          <li className= 'nav-link-list'> <Link to="/customers">Customers </Link> </li>
           </ul>
         </nav>
-        <h1> Videos Shop! </h1>
-        <div>
+        <h1 className = 'welcome-banner'> Welcome to BINGE! </h1>
+        <div >
           Selected Movie {selectedVideo? selectedVideo.title : ''}
           <br/>
           Selected Customer {selectedCustomer? selectedCustomer.name : ''}
@@ -88,18 +87,23 @@ const onCheckout = () => {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+
           <Route path="/search">
             <Search />
           </Route>
+
           <Route path="/library">
             <Library videosList = {videosList} onSelectVideoCallback ={onSelectVideoCallback}/>
           </Route>
+
           <Route path="/customers">
             <Customers customersList={customersList} onSelectCustomerCallback ={onSelectCustomerCallback} />
           </Route>
+
           <Route path="/">
             <Home />
           </Route>
+
         </Switch>
       </div>
     </Router>

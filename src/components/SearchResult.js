@@ -11,24 +11,25 @@ const SearchResult = (props) => {
 
   const onSelectAdd = (event) => {
     event.preventDefault();
-      const newVideoData = {...props}
-      console.log(newVideoData.inventory)
-      
-      axios.post(ADD_VIDEO_URL, newVideoData)
-        .then((response) => { 
-          console.log(response.data)
-          setdisplayMessage(`Added: ${props.title} to library`);
-        })
-        .catch((error) => {
-          setErrorMessage(error.message);
-        });
+    const newVideoData = {...props}
+    // console.log(newVideoData.inventory)
+    
+    axios.post(ADD_VIDEO_URL,  {newVideoData})
+    .then((response) => { 
+        console.log(response.data)
+        setdisplayMessage(`Added: ${props.title} to library`);
+      })
+      .catch((error) => {
+        // props.videosList.title === newVideoData.title ? setErrorMessage('Video Already in library') : setErrorMessage(error.message)
+        setErrorMessage('Video Already in library')
+      });
   }
 
   return (
     <div>
       <section>
-        {displayMessage ? <div> <h3>{displayMessage}</h3></div> : ''}
-        {errorMessage ? <div> <h3>{ errorMessage} </h3></div> : ''}
+        {displayMessage ? <div className = 'display-message'> <h3>{displayMessage}</h3></div> : ''}
+        {errorMessage ? <div className = 'error-message'> <h3>{ errorMessage} </h3></div> : ''}
       </section>
       <section>
         <h3>{props.title}</h3>

@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import SearchResult from './SearchResult';
+import './Search.css';
 
-const Search = () => {
+const Search = (props) => {
 
   const [searchTerm, setSearchTerm] = useState()
   const [searchResults, setSearchResults] = useState([])
@@ -48,11 +49,11 @@ const Search = () => {
   } 
 
   return (
-    <div className="search">
+    <div className="searchbar">
       <h1 className="body-header">Search</h1>
       <form onSubmit={onSubmitForm}>
-        <input onChange={onInputChange} value={searchTerm}/>
-        <input className="search" type="submit" value="Submit"/>
+        <input onChange={onInputChange} value={searchTerm} />
+        <input className="submit" type="submit" value="Submit"/>
       </form>
       <section> {searchComponents} </section>
     </div>
@@ -61,3 +62,5 @@ const Search = () => {
 
 //Proptypes
 export default Search;
+
+
