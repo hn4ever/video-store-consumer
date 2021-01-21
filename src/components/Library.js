@@ -5,7 +5,8 @@ import Video from './Video';
 
 
 const Library = (props) => {
-    const videosResponseData = props.videosList.map((video) => {
+    const sortedVideosList = props.videosList.sort((a,b) => (a.title > b.title ? 1:-1))
+    const videosResponseData = sortedVideosList.map((video) => {
         return ( < Video
             key = {video.id}
             id = {video.id}

@@ -98,7 +98,7 @@ const onCheckout = () => {
           </Route>
 
           <Route path="/customers">
-            <Customers customersList={customersList} onSelectCustomerCallback ={onSelectCustomerCallback} />
+            <Customers customersList={customersList.sort((customer) => customer.name)} onSelectCustomerCallback ={onSelectCustomerCallback} />
           </Route>
 
           <Route path="/">

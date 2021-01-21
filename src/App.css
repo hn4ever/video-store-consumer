@@ -37,7 +37,7 @@
 }
 
 .App-main-div {
-  background-image: url("https://hgtvhome.sndimg.com/content/dam/images/hgrm/fullset/2013/8/5/0/CEDIA2013_HT6_futurtistic_design_lighting_audio_system_home_theater_h.jpg.rend.hgtvcom.1280.960.suffix/1409190437991.jpeg");
+  background-image: url("https://i.ibb.co/4Rx3Tjx/1409190437991.jpg");
   padding: 200px ;
 
 }
@@ -45,4 +45,9 @@
 .welcome-banner {
   padding: 50px ;
 
+}
+
+/* to delete if fixed */
+h1,h2,div {
+  color: white;
 }
