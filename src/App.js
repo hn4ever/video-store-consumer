@@ -57,6 +57,14 @@ useEffect(() => {
 }, []);
 
 // Video checkout function here 
+const onCheckout = () => {
+  if(selectedVideo != null && selectedCustomer != null){
+  setVideosList(videosList.filter((video) => video.id != selectedVideo.id))
+  setSelectedVideo(null)
+  setSelectedCustomer(null)
+  //error message in else statement?
+  }
+}
 
   return (
     <Router>
@@ -72,8 +80,10 @@ useEffect(() => {
         <h1> Videos Shop! </h1>
         <div>
           Selected Movie {selectedVideo? selectedVideo.title : ''}
+          <br/>
           Selected Customer {selectedCustomer? selectedCustomer.name : ''}
-
+          <br/>
+          <button onClick={onCheckout}> Checkout </button>
         </div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
