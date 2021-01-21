@@ -11,6 +11,7 @@ import {
 
 import Customers from './components/Customers';
 import Library from  './components/Library';
+import Search from './components/Search';
 
 const App = () => {
 
@@ -47,7 +48,6 @@ useEffect(() => {
 useEffect(() => {
   axios.get(VIDEOS_URL)
     .then((response) => {
-      console.log(response.data)
       setVideosList(response.data);
     })
     .catch((error) => {
@@ -64,7 +64,7 @@ useEffect(() => {
         <nav>
           <ul>
           <li> <Link to="/">Home</Link> </li> 
-          <li> <Link to="/searchVideo">Search </Link> </li>
+          <li> <Link to="/search">Search </Link> </li>
           <li> <Link to="/library">Library </Link> </li>
           <li> <Link to="/customers">Customers </Link> </li>
           </ul>
@@ -73,8 +73,8 @@ useEffect(() => {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/searchVideo">
-            <SearchVideo />
+          <Route path="/search">
+            <Search />
           </Route>
           <Route path="/library">
             <Library videosList = {videosList} onSelectVideoCallback ={onSelectVideoCallback}/>

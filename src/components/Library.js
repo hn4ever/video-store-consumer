@@ -5,7 +5,6 @@ import Video from './Video';
 
 
 const Library = (props) => {
-    console.log(props.videosList)
     const videosResponseData = props.videosList.map((video) => {
         return ( < Video
             key = {video.id}
