@@ -65,26 +65,31 @@ const onCheckout = () => {
   }
 }
 
+
   return (
-    <Router>
-      <div className = 'App-main-div'>
+
+    <Router className = 'App-main-div'>
+      <div >
         <nav className= 'navbar'>
-          <ul>
+          <ul >
           <li className= 'nav-link-list'> <Link to="/">Home</Link> </li> 
           <li className= 'nav-link-list'> <Link to="/search">Search </Link> </li>
           <li className= 'nav-link-list'> <Link to="/library">Library </Link> </li>
           <li className= 'nav-link-list'> <Link to="/customers">Customers </Link> </li>
           </ul>
         </nav>
-        <h1 className = 'welcome-banner'> Welcome to BINGE! </h1>
-        <div >
-          Selected Movie {selectedVideo? selectedVideo.title : 'nothing selected'}
 
+        <h1 className = 'welcome-banner'> Welcome to BINGE! </h1>
+
+        <div className = 'checkout' >
+            Selected Movie {selectedVideo? selectedVideo.title : 'nothing selected'}
           <br/>
-          Selected Customer: {selectedCustomer? selectedCustomer.name : 'nothing selected'}
+            Selected Customer: {selectedCustomer? selectedCustomer.name : 'nothing selected'}
           <br/>
-          <button onClick={onCheckout}> Checkout </button>
+            <button className = 'button' onClick={onCheckout}> Checkout </button>
         </div>
+
+      </div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -106,7 +111,6 @@ const onCheckout = () => {
           </Route>
 
         </Switch>
-      </div>
     </Router>
 
   );

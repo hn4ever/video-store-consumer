@@ -9,7 +9,7 @@ const Customer = (props) => {
 
     return (
         <div className="customer">
-        <h2>Details for {props.name}</h2>
+        <h2>{props.name}</h2>
         <ul>
             <p>Address: {props.address}, {props.city}, {props.state}-{props.postal_code}  </p>
             <p>Phone: {props.phone}</p>

@@ -1,11 +1,16 @@
 .searchbar {
-    background-color: rgb(21, 16, 26) ;
+    background:rgba(63, 62, 63, 0.479);
     padding: 10px ;
     padding: 20px;
     margin-bottom:5px;
     display: flex;
+
 } 
 
 .submit {
     padding: 1px;
 } 
+
+.search {
+    text-align: center;
+}

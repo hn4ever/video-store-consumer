@@ -50,7 +50,7 @@ const Search = (props) => {
 
   return (
     <div className="searchbar">
-      <h1 className="body-header">Search</h1>
+      <h1 className="search">Search</h1>
       <form onSubmit={onSubmitForm}>
         <input onChange={onInputChange} value={searchTerm} />
         <input className="submit" type="submit" value="Submit"/>
