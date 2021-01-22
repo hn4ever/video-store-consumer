@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Customer.css'
+import PropTypes from 'prop-types';
+
 
 
 const Customer = (props) => {
@@ -33,6 +35,12 @@ const Customer = (props) => {
         </div>
     )
 }
+
+Customer.propTypes = {
+    library: PropTypes.array,
+    setError: PropTypes.func.isRequired,
+    addMovie: PropTypes.func.isRequired,
+  };
 
 
 export default Customer; 

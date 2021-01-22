@@ -62,7 +62,7 @@ const onCheckout = () => {
   if(selectedVideo != null && selectedCustomer != null){
   setVideosList(videosList.filter((video) => video.id != selectedVideo.id))
   setTimeout(() => {setSuccessMessage(null)},5000)
-  setSuccessMessage(`The Movie "${selectedVideo.title}" was successfully checked out for the custumer "${selectedCustomer.name}`)
+  setSuccessMessage(`The Movie "${selectedVideo.title}" was successfully checked out for the customer "${selectedCustomer.name}`)
   setSelectedVideo(null)
   setSelectedCustomer(null)
   }

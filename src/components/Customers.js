@@ -30,6 +30,9 @@ const Customers = (props) => {
     )
 }
     
-// Proptypes here 
-
+// Customer.propTypes = {
+//     id: PropTypes.number.isRequired,
+//     name: PropTypes.string.isRequired,
+//     customerCallback: PropTypes.func.isRequired,
+// };
 export default Customers; 

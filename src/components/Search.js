@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import SearchResult from './SearchResult';
 import './Search.css';
+
 
 const Search = (props) => {
 
@@ -60,7 +62,6 @@ const Search = (props) => {
   );
 }
 
-//Proptypes
 export default Search;
 
 

@@ -6,6 +6,8 @@
   font-size:15px;
   background-color: pink;
 
+  
+
 }
 
 .movie {
@@ -13,6 +15,9 @@
   font-size:25px;
   background-color: pink;
   display: inline-box;
+  font-family: 'Helvetica Neue', sans-serif;
+
+
 }
 
 .directions {
@@ -20,12 +25,17 @@
   font-size:20px;
   background-color: pink;
   display: inline-box;
+  font-family: 'Fantasy	', sans-serif;
+
 }
+
 
 .customer {
   padding: 1px ;
   font-size:25px;
   display: inline-box;
+  font-family: 'Helvetica Neue', sans-serif;
+
 
 }
 
@@ -81,12 +91,14 @@ a {
 }
 
 .welcome-banner {
-  padding: 1px;
+  padding: 50px;
   font-size: 50px;
-  color: rgb(41, 38, 38); font-family: 'Helvetica Neue', sans-serif; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+  color: rgb(41, 38, 38); 
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 100px; font-weight: bold; 
+  letter-spacing: -1px; 
+  line-height: 1; text-align: center; 
+  /* background-image: url("https://ak.picdn.net/shutterstock/videos/7018603/thumb/1.jpg"); */
+
 }
 
-h1,h2, {
-  background-color: black;
-  color: white;
-}

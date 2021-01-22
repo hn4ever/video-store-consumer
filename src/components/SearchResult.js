@@ -13,15 +13,13 @@ const SearchResult = (props) => {
   const onSelectAdd = (event) => {
     event.preventDefault();
     const newVideoData = {...props}
-    // console.log(newVideoData.inventory)
     
-    axios.post(ADD_VIDEO_URL,  {newVideoData})
+    axios.post(ADD_VIDEO_URL,  newVideoData)
     .then((response) => { 
         console.log(response.data)
         setdisplayMessage(`Added: ${props.title} to library`);
       })
       .catch((error) => {
-        // props.videosList.title === newVideoData.title ? setErrorMessage('Video Already in library') : setErrorMessage(error.message)
         setErrorMessage('Video Already in library')
       });
   }
