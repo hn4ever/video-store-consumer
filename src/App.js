@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -60,10 +61,10 @@ useEffect(() => {
 const onCheckout = () => {
   if(selectedVideo != null && selectedCustomer != null){
   setVideosList(videosList.filter((video) => video.id != selectedVideo.id))
+  setTimeout(() => {setSuccessMessage(null)},5000)
+  setSuccessMessage(`The Movie "${selectedVideo.title}" was successfully checked out for the custumer "${selectedCustomer.name}`)
   setSelectedVideo(null)
   setSelectedCustomer(null)
-  setTimeout(() => {setSuccessMessage(null)},5000)
-  setSuccessMessage('Success')
   }
 }
 
@@ -84,13 +85,13 @@ const onCheckout = () => {
         <h1 className = 'welcome-banner'> Welcome to BINGE! </h1>
 
         <div className = 'checkout' >
-            Selected Movie {selectedVideo? selectedVideo.title : 'nothing selected'}
+            Selected Movie: {selectedVideo? selectedVideo.title : 'nothing selected'}
           <br/>
             Selected Customer: {selectedCustomer? selectedCustomer.name : 'nothing selected'}
           <br/>
             <button className = 'button' onClick={onCheckout}> Checkout </button>
             <div>
-              {successMessage}
+              <strong>{successMessage}</strong>
             </div>
         </div>
 
