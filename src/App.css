@@ -1,11 +1,5 @@
 
 
-/* .welcome-banner {
-  padding: 50px ;
-  text-align: center;
-  
-} */
-
 .checkout {
   text-align: center;
   padding: 5px ;
@@ -42,7 +36,7 @@
 
 .navbar {
   color:#999;
-  background:rgba(0, 0, 0, 0.5);
+  /* background:rgba(247, 244, 244, 0.5); */
   padding:20px;
   font-size:20px;
   text-decoration:none;
@@ -52,6 +46,8 @@
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   text-align: center;
+    background-image: url("https://i.ytimg.com/vi/Y-wliSqpH74/maxresdefault.jpg");
+
 }
 
 .nav-link-list  {
@@ -80,7 +76,6 @@ a {
 .App-main-div {
   padding: 100px ;
   /* background-color: purple; */
-  /* background-image: url("https://i.ibb.co/4Rx3Tjx/1409190437991.jpg"); */
 
 
 }
