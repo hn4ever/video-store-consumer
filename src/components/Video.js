@@ -13,8 +13,8 @@ const Video = (props) => {
             <h2>{props.title}</h2>
             <ul>
                 <img className = 'image'src={props.image_url} alt='video cover'/>
-                <p className= 'overview'>Overview: {props.overview}</p>
-                <p>Release Date: {props.release_date}</p>
+                {/* <p className= 'overview'>Overview: {props.overview}</p>
+                <p>Release Date: {props.release_date}</p> */}
             </ul>
             <button onClick={onSelect}> Select </button>
         </div>

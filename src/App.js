@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,6 +27,7 @@ const [videosList, setVideosList] = useState([])
 const [selectedVideo, setSelectedVideo] = useState(null)
 
 const [errorMessage, setErrorMessage] = useState(null);
+const [successMessage, setSuccessMessage] = useState(null);
 
 const onSelectCustomerCallback = (customerId) => {
   setSelectedCustomer(customersList.find((customer)=> customer.id == customerId))
@@ -59,9 +61,10 @@ useEffect(() => {
 const onCheckout = () => {
   if(selectedVideo != null && selectedCustomer != null){
   setVideosList(videosList.filter((video) => video.id != selectedVideo.id))
+  setTimeout(() => {setSuccessMessage(null)},5000)
+  setSuccessMessage(`The Movie "${selectedVideo.title}" was successfully checked out for the custumer "${selectedCustomer.name}`)
   setSelectedVideo(null)
   setSelectedCustomer(null)
-  //error message in else statement?
   }
 }
 
@@ -86,6 +89,9 @@ const onCheckout = () => {
           <p className = 'movie'> Movie: {selectedVideo? selectedVideo.title : ''} </p>
           <p className = 'customer'> Customer: {selectedCustomer ? selectedCustomer.name : ''} </p>
             <button className = 'button' onClick={onCheckout}> Checkout </button>
+            <div>
+              <strong>{successMessage}</strong>
+            </div>
         </div>
 
       </div>

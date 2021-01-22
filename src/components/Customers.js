@@ -5,7 +5,8 @@ import Customer from './Customer';
 
 
 const Customers = (props) => {
-    const customersResponseData = props.customersList.map((customer) => {
+    const sortedCustomersList = props.customersList.sort((a,b) => (a.name > b.name ? 1:-1));
+    const customersResponseData = sortedCustomersList.map((customer) => {
         return ( < Customer
             key = {customer.id}
             id = {customer.id}
