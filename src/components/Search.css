@@ -3,6 +3,8 @@
     padding: 10px ;
     margin-bottom:5px;
     text-align: center;
+    /* background-image: url("https://t4.ftcdn.net/jpg/02/52/89/41/240_F_252894144_hW1DLUX9zrCLh64ScJGbc2r3HhPFsGfQ.jpg"); */
+
 } 
 
 .submit {
@@ -10,11 +12,13 @@
     
 } 
 
-.search {
+h1 {
     text-align: center;
+    
 }
 
 .searchform {
     text-align: center;
+    
 
 }
