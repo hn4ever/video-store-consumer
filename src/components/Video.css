@@ -1,7 +1,7 @@
-.image {
+/* .image {
     width:15%
 
-}
+} */
 
 .overview {
     text-align: center;
@@ -10,6 +10,7 @@
 
 .video {
     background-color: rgb(9, 6, 12);
+    width: 300px;
 }
 
 

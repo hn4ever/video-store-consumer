@@ -26,6 +26,7 @@ const [videosList, setVideosList] = useState([])
 const [selectedVideo, setSelectedVideo] = useState(null)
 
 const [errorMessage, setErrorMessage] = useState(null);
+const [successMessage, setSuccessMessage] = useState(null);
 
 const onSelectCustomerCallback = (customerId) => {
   setSelectedCustomer(customersList.find((customer)=> customer.id == customerId))
@@ -61,7 +62,8 @@ const onCheckout = () => {
   setVideosList(videosList.filter((video) => video.id != selectedVideo.id))
   setSelectedVideo(null)
   setSelectedCustomer(null)
-  //error message in else statement?
+  setTimeout(() => {setSuccessMessage(null)},5000)
+  setSuccessMessage('Success')
   }
 }
 
@@ -87,6 +89,9 @@ const onCheckout = () => {
             Selected Customer: {selectedCustomer? selectedCustomer.name : 'nothing selected'}
           <br/>
             <button className = 'button' onClick={onCheckout}> Checkout </button>
+            <div>
+              {successMessage}
+            </div>
         </div>
 
       </div>

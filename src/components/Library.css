@@ -1,0 +1,13 @@
+/* .library {
+    display: grid;
+    grid-gap: 5px;
+    align-content: center;
+    grid-template-columns: 300px 300px 300px;
+    grid-auto-rows: 400px;
+} */
+
+.library {
+    display: flex;
+    flex-wrap: wrap;
+
+}

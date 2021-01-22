@@ -66,4 +66,7 @@ a {
   padding: 50px;
 }
 
-
+h1,h2,div {
+  background-color: black;
+  color: white;
+}
