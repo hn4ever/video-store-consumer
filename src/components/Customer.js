@@ -10,12 +10,12 @@ const Customer = (props) => {
     return (
         <div className="customer">
         <h2>{props.name}</h2>
-        <ul>
+        {/* <ul>
             <p>Address: {props.address}, {props.city}, {props.state}-{props.postal_code}  </p>
             <p>Phone: {props.phone}</p>
             <p>Account Credit: {props.account_credit}</p>
             <p>Videos Checked Out: {props.videos_checked_out_count}</p>
-        </ul>
+        </ul> */}
         <button onClick={onSelect}> Select </button>
         </div>
     )
