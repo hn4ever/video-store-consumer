@@ -7,8 +7,30 @@
 
 .checkout {
   text-align: center;
-  padding: 50px ;
+  padding: 5px ;
+  font-size:15px;
+  background-color: pink;
+
+}
+
+.movie {
+  padding: 1px ;
+  font-size:25px;
+  background-color: pink;
+  display: inline-box;
+}
+
+.directions {
+  padding: 1px ;
   font-size:20px;
+  background-color: pink;
+  display: inline-box;
+}
+
+.customer {
+  padding: 1px ;
+  font-size:25px;
+  display: inline-box;
 
 }
 
@@ -63,7 +85,9 @@ a {
 }
 
 .welcome-banner {
-  padding: 50px;
-}
+  padding: 1px;
+  font-size: 50px;
 
+  color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+}
 

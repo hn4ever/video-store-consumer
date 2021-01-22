@@ -79,13 +79,12 @@ const onCheckout = () => {
           </ul>
         </nav>
 
-        <h1 className = 'welcome-banner'> Welcome to BINGE! </h1>
+        <h1 className = 'welcome-banner'> BINGE</h1>
 
         <div className = 'checkout' >
-            Selected Movie {selectedVideo? selectedVideo.title : 'nothing selected'}
-          <br/>
-            Selected Customer: {selectedCustomer? selectedCustomer.name : 'nothing selected'}
-          <br/>
+          <p className = 'directions' >Please select one customer and one movie to checkout.</p>
+          <p className = 'movie'> Movie: {selectedVideo? selectedVideo.title : ''} </p>
+          <p className = 'customer'> Customer: {selectedCustomer ? selectedCustomer.name : ''} </p>
             <button className = 'button' onClick={onCheckout}> Checkout </button>
         </div>
 
@@ -117,19 +116,19 @@ const onCheckout = () => {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2></h2>;
 }
 
 function SearchVideo() {
-  return <h2>Search Video</h2>;
+  return <h2></h2>;
 }
 
 function LibraryList() {
-  return <h2>Library</h2>;
+  return <h2></h2>;
 }
 
 function CustomersList() {
-  return <h2>Customers</h2>;
+  return <h2></h2>;
 }
 
 export default App; 
