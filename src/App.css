@@ -1,9 +1,10 @@
 
 
-.welcome-banner {
+/* .welcome-banner {
   padding: 50px ;
   text-align: center;
-}
+  
+} */
 
 .checkout {
   text-align: center;
@@ -87,10 +88,10 @@ a {
 .welcome-banner {
   padding: 1px;
   font-size: 50px;
-  color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+  color: rgb(41, 38, 38); font-family: 'Helvetica Neue', sans-serif; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
 }
 
-h1,h2,div {
+h1,h2, {
   background-color: black;
   color: white;
 }
