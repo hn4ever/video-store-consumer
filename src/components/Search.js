@@ -51,7 +51,7 @@ const Search = (props) => {
   return (
     <div className="searchbar">
       <h1 className="search">Search</h1>
-      <form onSubmit={onSubmitForm}>
+      <form className = 'searchform' onSubmit={onSubmitForm}>
         <input onChange={onInputChange} value={searchTerm} />
         <input className="submit" type="submit" value="Submit"/>
       </form>

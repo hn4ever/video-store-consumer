@@ -9,8 +9,9 @@
 } 
 
 .video {
-    background-color: rgb(9, 6, 12);
+    background-color: rgba(243, 207, 213, 0.699);
     width: 300px;
+    padding: 28px;
 }
 
 
