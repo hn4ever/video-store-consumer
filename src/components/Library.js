@@ -27,6 +27,5 @@ const Library = (props) => {
     )
 }
 
-// Proptypes here 
 
 export default Library; 

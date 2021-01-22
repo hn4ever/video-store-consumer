@@ -29,10 +29,5 @@ const Customers = (props) => {
         </div>
     )
 }
-    
-// Customer.propTypes = {
-//     id: PropTypes.number.isRequired,
-//     name: PropTypes.string.isRequired,
-//     customerCallback: PropTypes.func.isRequired,
-// };
+
 export default Customers; 

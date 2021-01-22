@@ -57,7 +57,6 @@ useEffect(() => {
     });
 }, []);
 
-// Video checkout function here 
 const onCheckout = () => {
   if(selectedVideo != null && selectedCustomer != null){
   setVideosList(videosList.filter((video) => video.id != selectedVideo.id))

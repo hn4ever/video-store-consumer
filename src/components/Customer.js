@@ -24,23 +24,11 @@ const Customer = (props) => {
             <p>Videos Checked Out: {props.videos_checked_out_count}</p>
         </ul>
         )}
-        {/* <ul>
-            <p>Address: {props.address}, {props.city}, {props.state}-{props.postal_code}  </p>
-            <p>Phone: {props.phone}</p>
-            <p>Account Credit: {props.account_credit}</p>
-            <p>Videos Checked Out: {props.videos_checked_out_count}</p>
-        </ul> */}
         <br/>
         <button onClick={onSelect}> Select </button>
         </div>
     )
 }
-
-Customer.propTypes = {
-    library: PropTypes.array,
-    setError: PropTypes.func.isRequired,
-    addMovie: PropTypes.func.isRequired,
-  };
 
 
 export default Customer; 
